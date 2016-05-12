@@ -53,7 +53,7 @@
 			 $.post( "ajax.php", { type: "getAnswer", id:currentId })      
 			.done(function( data ) {   
 			
-					 $("#answerdiv").html(data);       
+					 $("#answerBox").html(data);       
 				});  
 			}
 
@@ -106,11 +106,11 @@
 			  <p>Thank you for asking a question, please wait for an answer!</p>
 			</div>
 		
-		</div>
+		</div><!--end of questionBox-->
 
-		<div id ="answerdiv"> 
+		<div id ="answerBox">
 
-		</div>   
+		</div><!--End of answerBox-->
     
 	<script>
       $( "#sampledialog" ).hide();
