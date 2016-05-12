@@ -8,6 +8,7 @@
   <script src="http://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
   
   <style type="text/css">
+  
       #wrapper{
 		  width:960;
 		  margin:auto;
@@ -28,8 +29,38 @@
 
 <body>
 
+<script>
+     
+    function sendToDatabase(){
+
+     $.get( "https://api.xmltime.com/timeservice?accesskey=f5UdeHdeHd&expires=2016-05-12T20%3A22%3A38%2B00%3A00&signature=62xwag1rjXHlFEtFAaFKLZx7gtg%3D&version=2&out=xml&placeid=norway%2Foslo", function( data ) {
+        xml = new XMLSerializer().serializeToString(data.documentElement);
+        xmlDoc = $.parseXML( xml ),
+        $xml = $( xmlDoc ),
+        $title = $xml.find("time");
+		
+        $( "#someElement" ).append( $title.text() );
+             
+     });
+
+
+}
+     
+        </script>
+	 
 	<div id="wrapper">
 	
+		
+		
+		<button onclick="sendToDatabase()">Query Service</button>
+		
+		
+		
+		  <p id="someElement"></p>
+            <p id="anotherElement"></p>
+
+       
+		
 		
 
 		<script>
