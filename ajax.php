@@ -64,9 +64,9 @@ function getAnswer(){
     $q->execute();
     
     $td = $q->fetch(PDO::FETCH_ASSOC);
-
-    echo $td['answer'];
-	echo "<strong>".$td['tstamp'] ."</strong>";
+	echo "<h4>Your Answer!</h4>";
+    echo "<td class='cell'>".$td['answer']."</td>";
+	echo "<td class='cell'>"."<strong> - ".$td['tstamp'] ."</strong>"."</td>";
 	
 
     

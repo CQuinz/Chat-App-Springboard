@@ -1,0 +1,135 @@
+//CSS Stylesheet
+
+	
+body{
+		
+		font-family: helvetica, sans-serif;
+		margin: 0;
+		padding: 0;
+	}
+	
+	#header{
+		background-color:purple;
+		height:320px;
+	}
+    
+	#wrapper {
+			width: 960px;
+			height: 500px;
+            margin: 0 auto;
+			
+                
+                
+    }
+	
+	#topBarAPI{
+		margin: auto;
+		height:30px;
+		background-color:#ff33cc;
+		
+	}
+
+      input {
+         padding: 5px 5px 5px 5px;
+         font-size: 20px;
+         border-radius: 5px;
+         border: 1px solid grey;
+         width:300px;
+		 
+
+    }
+            
+       label {
+		 position: relative;
+         top:12px;
+		 left:30px;
+		 font-size:25px;
+         
+         width:150px;
+		 float:left;
+         
+                
+    }
+            
+		
+            
+     .formElement {
+			
+		float:left;
+		margin-bottom: 5px;
+                
+    }
+	 
+	 button{
+		 display:inline-block;
+		 font-size:20px;
+		 margin-left:385px;
+		 margin-top:5px;
+		 margin-bottom:5px;
+	 }
+	 
+	 h1{
+		 color:white;
+		 font-size: 140px;
+		 text-align: center;
+		
+	}
+	
+	h4{
+		text-align:center;
+	}
+	 
+	 .white{
+		 color:white;
+		 font-weight:bold;
+		 text-align:center;
+		 padding-top:3px;
+		 padding-right:5px;
+		 text-shadow: 2px 2px 3px #000000;
+	 }
+	 
+	 #infoAPI{
+		color:white;
+		font-weight:bold;
+		text-align: center;
+		padding-top:3px;
+		padding-right:5px;
+	 }
+	 
+	 input{
+		 margin-top:5px;
+		 margin-left:5px;
+		 border-radius:5%;
+		 border:1px solid grey;
+		 display:block;
+	 }
+  
+	#answerBox{
+		display:none;
+		width:300px;
+		height:200px;
+		clear:both;
+		float:left;
+		
+		margin:auto;
+		margin-top: 30px;
+		padding:5px;
+		
+		border:1px solid grey;
+		border-radius:5%;
+		box-shadow: 5px 5px 10px grey;
+	}
+	
+	
+	td .cell{
+		border: 1px solid black;
+		padding:5px;
+		border: 1px solid purple;
+	}
+	
+	
+	#footer{
+		position:fixed;
+		bottom: 100px;
+		clear:both;
+	}

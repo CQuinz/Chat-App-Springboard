@@ -2,27 +2,12 @@
 
 <head>  <meta charset="utf-8">  
 <title>Compustore Tech Support</title>  
-
+ 
   <link rel="stylesheet" href="http://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+  <link rel="stylesheet" type="text/css" href="css/style.css" />
   <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
   <script src="http://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
-  
-  <style type="text/css">
-  
-      #wrapper{
-		  width:960;
-		  margin:auto;
-		  height:800;
-	  }
-     #questionBox{
-		 width:300;
-		 height:300;
-		 margin:auto;
-		 border:1px solid black;
-		 padding:5px;
-	 }
-  
-  </style>
+ 
 
 
 </head>
@@ -30,7 +15,7 @@
 <body>
 
 <script>
-     
+     // Adding Time and Date API function
     function sendToDatabase(){
 
      $.get( "https://api.xmltime.com/timeservice?accesskey=f5UdeHdeHd&expires=2016-05-12T20%3A22%3A38%2B00%3A00&signature=62xwag1rjXHlFEtFAaFKLZx7gtg%3D&version=2&out=xml&placeid=norway%2Foslo", function( data ) {
@@ -39,7 +24,7 @@
         $xml = $( xmlDoc ),
         $title = $xml.find("time");
 		
-        $( "#someElement" ).append( $title.text() );
+        $( "#infoAPI" ).append( $title.text() );
              
      });
 
@@ -47,16 +32,23 @@
 }
      
         </script>
+		
+	<div id="header">
+		<div id="topBarAPI">
+			<p class="white"> Your API info here: <span id="infoAPI"></span></p>
+			
+		</div><!--End of #topBarAPI div-->
+		<h1>Customer Support</h1>
+	</div>
 	 
 	<div id="wrapper">
 	
+	
+		<button onclick="sendToDatabase()">API Service</button>
 		
 		
-		<button onclick="sendToDatabase()">Query Service</button>
 		
-		
-		
-		  <p id="someElement"></p>
+		  
             <p id="anotherElement"></p>
 
        
@@ -83,8 +75,10 @@
 			
 			 $.post( "ajax.php", { type: "getAnswer", id:currentId })      
 			.done(function( data ) {   
-			
-					 $("#answerBox").html(data);       
+					
+					$("#answerBox").fadeIn();
+					 $("#answerBox").html(data);
+						
 				});  
 			}
 
@@ -110,36 +104,41 @@
 
 		}
 
-
-
-
 		</script>
 
-		<div id="questionBox">
+		
    
-			<!--
-			<form> 
-			BUG! app stops working when you include the form tag?-->
+		<div class="formElement">	
 
-			Name: <input type="text" name="app_name" id="app_name"></input><br>   
-
-
-			Question: <input type="text" name="app_ques" id="app_ques"> </input><br>
+			<label id="name">Name:</label> 
 			
+			<input type="text" name="app_name" id="app_name"></input>   
+		
+		</div><!--end of formElement div-->
+		
+		<div class="formElement">
+		
+			<label id="question">Question:</label>
+			
+			<input type="text" name="app_ques" id="app_ques"> </input><br>
+		
+		</div><!--end of second formElement div-->
+		
+		<div class="formElement">
+		
 			<button onclick="askQuestion();">Ask Question</button> 
+		</div>	
 			
-			<!--
-			</form> 
-			Removing tag for now
-			-->
 			
 			<div id="sampledialog" title="Basic dialog">
 			  <p>Thank you for asking a question, please wait for an answer!</p>
 			</div>
 		
-		</div><!--end of questionBox-->
+		
 
 		<div id ="answerBox">
+			<table>
+			</table>
 
 		</div><!--End of answerBox-->
     
@@ -148,6 +147,10 @@
       $( "#hiddendiv" ).hide();
       
 	</script>
+	
+		<div id="footer">
+			<h6></h6>
+		</div>
   
 	</div><!--End of Wrapper div-->
 	
