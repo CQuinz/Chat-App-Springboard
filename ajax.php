@@ -58,14 +58,16 @@ function getAnswer(){
     
     $id = $_POST['id'];
     
-    $q = $DBH->prepare("select answer from iwa2016 where id = :currentId");
+    $q = $DBH->prepare("select answer, tstamp from iwa2016 where id = :currentId");
     $q->bindValue(':currentId',  $id);
    
     $q->execute();
     
-    $row = $q->fetch(PDO::FETCH_ASSOC);
-
-    echo $row['answer'];
+    $td = $q->fetch(PDO::FETCH_ASSOC);
+	echo "<h4>Your Answer!</h4>";
+    echo "<td class='cell'>".$td['answer']."</td>";
+	echo "<td class='cell'>"."<strong> - ".$td['tstamp'] ."</strong>"."</td>";
+	
 
     
 }
